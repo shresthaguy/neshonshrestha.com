@@ -52,5 +52,3 @@ Claude Code uses whatever directory you launch it from as the project root.
 - One clear ask per prompt produces better results than dumping everything at once
 - Trust but verify — always run the code and read the diff
 - CLAUDE.md is worth the upfront investment — every session starts smarter
-- No git needed for non-coding projects — just a folder and your files
-- It's a conversation partner, not a command terminal — context matters more than syntax
