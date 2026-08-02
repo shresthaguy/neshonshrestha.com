@@ -1,0 +1,107 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm <span class="highlight">Neshon Shrestha</span></h1>
+        <p class="hero-subtitle">{{ .Site.Params.description }}</p>
+        <div class="hero-cta">
+            <a href="/#about" class="btn btn-primary">About Me</a>
+            <a href="/kb/" class="btn btn-secondary">Knowledge Base</a>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I'm a cloud technology professional passionate about AWS, AI/ML, and helping others navigate the evolving landscape of cloud computing. I believe in learning by building and sharing what I learn along the way.</p>
+            <p>This site is my personal space to document my journey, share technical insights, and connect with fellow builders. Whether it's architecture patterns, automation scripts, or lessons learned from working with AI tools — I write about what I find useful and hope others do too.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Your Current Role</h3>
+                    <span class="timeline-date">Present</span>
+                    <p>Add your current role and responsibilities here.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Previous Role</h3>
+                    <span class="timeline-date">Year - Year</span>
+                    <p>Add your previous experience here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Copy Security Group</h3>
+                <p>Shell script to import/export AWS security groups across VPCs, regions, and accounts using AWS CLI + jq.</p>
+                <div class="project-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Shell</span>
+                    <span class="tag">Security</span>
+                </div>
+                <a href="https://github.com/shresthaguy/copy-security-group" target="_blank" rel="noopener" class="project-link">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>neshonshrestha.com</h3>
+                <p>This personal website — built with Hugo and Claude Code as a learning project for AI-assisted development.</p>
+                <div class="project-tags">
+                    <span class="tag">Hugo</span>
+                    <span class="tag">Claude Code</span>
+                    <span class="tag">Web</span>
+                </div>
+                <a href="https://github.com/shresthaguy/shresthaguy.github.io" target="_blank" rel="noopener" class="project-link">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Knowledge Base Entries -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Recent Notes</h2>
+        <div class="posts-list">
+            {{ range first 5 (where .Site.RegularPages "Section" "kb") }}
+            <article class="post-preview">
+                <div class="post-meta">
+                    {{ with .Params.category }}<span class="post-category">{{ . }}</span>{{ end }}
+                    <time datetime="{{ .Params.lastmod | default .Date | time.Format "2006-01-02" }}">Updated {{ .Params.lastmod | default .Date | time.Format "Jan 2, 2006" }}</time>
+                </div>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Description }}</p>
+                {{ with .Params.tags }}
+                <div class="post-tags">
+                    {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+                </div>
+                {{ end }}
+            </article>
+            {{ else }}
+            <p class="no-posts">Knowledge base articles coming soon. Notes on cloud architecture, AI tools, and lessons learned.</p>
+            {{ end }}
+        </div>
+        <a href="/kb/" class="btn btn-secondary">Browse All Notes</a>
+    </div>
+</section>
+
+{{ end }}

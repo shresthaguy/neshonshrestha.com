@@ -1,0 +1,9 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. Built with curiosity and Claude Code.</p>
+        <div class="footer-links">
+            {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+            {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+        </div>
+    </div>
+</footer>

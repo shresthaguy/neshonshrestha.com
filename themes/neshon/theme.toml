@@ -1,0 +1,6 @@
+name = "Neshon"
+license = "MIT"
+description = "Personal portfolio and blog theme"
+
+[author]
+  name = "Neshon Shrestha"

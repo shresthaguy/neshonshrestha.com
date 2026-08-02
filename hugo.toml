@@ -1,0 +1,30 @@
+baseURL = 'https://neshonshrestha.com/'
+locale = 'en-us'
+title = 'Neshon Shrestha'
+theme = 'neshon'
+
+[params]
+  description = "Cloud & AI enthusiast | AWS | Building at the intersection of technology and innovation"
+  author = "Neshon Shrestha"
+  github = "https://github.com/shresthaguy"
+  linkedin = ""
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changeFreq = "weekly"
+  priority = 0.5
+
+[params.seo]
+  keywords = ["cloud architecture", "AWS", "DevOps", "AI", "automation"]

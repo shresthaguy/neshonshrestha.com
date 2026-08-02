@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="section">
+    <div class="container">
+        <h1 class="section-title">{{ .Title }}</h1>
+
+        {{ if eq .Section "blog" }}
+        <div class="posts-list">
+            {{ range .Pages }}
+            <article class="post-preview">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Summary }}</p>
+                {{ with .Params.tags }}
+                <div class="post-tags">
+                    {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+                </div>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+        {{ else }}
+        <div class="content-body">
+            {{ .Content }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

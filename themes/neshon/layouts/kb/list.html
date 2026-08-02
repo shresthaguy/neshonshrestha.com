@@ -1,0 +1,59 @@
+{{ define "main" }}
+<section class="section">
+    <div class="container">
+        <h1 class="section-title">Knowledge Base</h1>
+        <p class="kb-intro">Reference notes on things I've learned — organized by topic, updated as I go.</p>
+
+        {{ $pages := .Pages }}
+        {{ $categories := slice }}
+        {{ range $pages }}
+            {{ with .Params.category }}
+                {{ if not (in $categories .) }}
+                    {{ $categories = $categories | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ range $cat := $categories }}
+        <div class="kb-category">
+            <h2 class="kb-category-title">{{ $cat }}</h2>
+            <div class="kb-grid">
+                {{ range where $pages "Params.category" $cat }}
+                <a href="{{ .Permalink }}" class="kb-card">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Description }}</p>
+                    {{ with .Params.tags }}
+                    <div class="post-tags">
+                        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+                    </div>
+                    {{ end }}
+                    <span class="kb-updated">Updated {{ .Params.lastmod | default .Date | time.Format "Jan 2, 2006" }}</span>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        {{ $uncategorized := where $pages "Params.category" nil }}
+        {{ with $uncategorized }}
+        <div class="kb-category">
+            <h2 class="kb-category-title">General</h2>
+            <div class="kb-grid">
+                {{ range . }}
+                <a href="{{ .Permalink }}" class="kb-card">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Description }}</p>
+                    {{ with .Params.tags }}
+                    <div class="post-tags">
+                        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+                    </div>
+                    {{ end }}
+                    <span class="kb-updated">Updated {{ .Params.lastmod | default .Date | time.Format "Jan 2, 2006" }}</span>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
