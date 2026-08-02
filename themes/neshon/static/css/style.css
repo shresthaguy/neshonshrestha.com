@@ -160,7 +160,7 @@ a:hover {
 
 /* Hero */
 .hero {
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,6 +191,23 @@ a:hover {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.hero-social {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.hero-social a {
+    color: var(--text-secondary);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.hero-social a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
 }
 
 /* Buttons */
@@ -246,6 +263,33 @@ a:hover {
     max-width: 750px;
 }
 
+/* Badges */
+.badges-section {
+    padding: 4rem 0;
+}
+
+.about-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.about-badges a {
+    display: block;
+    transition: transform 0.2s;
+}
+
+.about-badges a:hover {
+    transform: scale(1.1);
+}
+
+.about-badges img {
+    width: 90px;
+    height: 90px;
+    border-radius: 6px;
+}
+
 /* Timeline */
 .timeline {
     position: relative;
@@ -271,7 +315,15 @@ a:hover {
 
 .timeline-content h3 {
     font-size: 1.2rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.1rem;
+}
+
+.timeline-company {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
 }
 
 .timeline-date {

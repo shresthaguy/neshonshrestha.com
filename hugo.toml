@@ -4,10 +4,10 @@ title = 'Neshon Shrestha'
 theme = 'neshon'
 
 [params]
-  description = "Cloud & AI enthusiast | AWS | Building at the intersection of technology and innovation"
+  description = "TAM at AWS | Linux, Storage, Security | Exploring AI"
   author = "Neshon Shrestha"
   github = "https://github.com/shresthaguy"
-  linkedin = ""
+  linkedin = "https://www.linkedin.com/in/neshons"
 
 [taxonomies]
   tag = "tags"

@@ -9,6 +9,18 @@
             <a href="/#about" class="btn btn-primary">About Me</a>
             <a href="/kb/" class="btn btn-secondary">Knowledge Base</a>
         </div>
+        <div class="hero-social">
+            {{ with .Site.Params.linkedin }}
+            <a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            {{ end }}
+            {{ with .Site.Params.github }}
+            <a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            {{ end }}
+        </div>
     </div>
 </section>
 
@@ -17,33 +29,73 @@
     <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>I'm a cloud technology professional passionate about AWS, AI/ML, and helping others navigate the evolving landscape of cloud computing. I believe in learning by building and sharing what I learn along the way.</p>
-            <p>This site is my personal space to document my journey, share technical insights, and connect with fellow builders. Whether it's architecture patterns, automation scripts, or lessons learned from working with AI tools — I write about what I find useful and hope others do too.</p>
+            <p>Technical Account Manager at AWS. I help enterprise customers keep their cloud infrastructure reliable, secure, and performing well.</p>
+            <p>Background in Linux, storage, networking, and security. Currently investing time in AI/ML and how it changes the way we work.</p>
+            <p>This site is where I document solutions to real problems and things I'm learning along the way.</p>
         </div>
     </div>
 </section>
 
 <!-- Experience -->
-<section id="experience" class="section section-alt">
+<section id="career" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title">Career Highlights</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <h3>Your Current Role</h3>
-                    <span class="timeline-date">Present</span>
-                    <p>Add your current role and responsibilities here.</p>
+                    <h3>Technical Account Manager</h3>
+                    <span class="timeline-company">Amazon Web Services</span>
+                    <span class="timeline-date">Jul 2025 – Present</span>
+                    <p>Primary technical advisor for enterprise customers — guiding architecture decisions, leading incident response for high-severity issues, performing security and compliance assessments, and translating complex technical findings into executive-level reports that drive action.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <h3>Previous Role</h3>
-                    <span class="timeline-date">Year - Year</span>
-                    <p>Add your previous experience here.</p>
+                    <h3>Cloud Support Engineer</h3>
+                    <span class="timeline-company">Amazon Web Services</span>
+                    <span class="timeline-date">May 2019 – Jul 2025</span>
+                    <p>Subject matter expert in Amazon EBS. Troubleshot complex compute, storage, and networking issues across Linux-based distributed systems. Led cross-team incident response, built runbooks and knowledge base content, and identified recurring issues to drive architectural improvements.</p>
                 </div>
             </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Support – Help Desk</h3>
+                    <span class="timeline-company">Westat</span>
+                    <span class="timeline-date">Oct 2018 – May 2019</span>
+                    <p>Provided technical support for hardware, software, and network issues. Contributed to knowledge base articles to improve first-contact resolution.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>IT Assistant</h3>
+                    <span class="timeline-company">Sunrise Bank Limited, Nepal</span>
+                    <span class="timeline-date">Jul 2015 – Nov 2017</span>
+                    <p>Supported enterprise IT systems including Active Directory, email, and Linux infrastructure. Assisted in core banking software migration ensuring data integrity with minimal disruption.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications -->
+<section class="section badges-section">
+    <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="about-badges">
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/b382a786-629d-4e2e-acda-76706cfe4939/blob" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/71fe0b13-e036-493b-b723-3e57a1face71/blob" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/f9092eff-1951-4b43-901c-d43df9034b22/blob" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/94af532a-9586-4cc5-b313-6341d3e5fb89/blob" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/635449f2-3a53-40b3-bf08-5af4fb95df61/blob" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/97c269f6-c8d0-40bd-8cbc-5c7834dbbc91/blob" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/2d84e428-9078-49b6-a804-13c15383d0de/image.png" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/96012817-d2f3-4a13-8275-eb6ef323dc2b/image.png" alt="AWS Certification" loading="lazy"></a>
+            <a href="https://www.credly.com/users/neshon-shrestha" target="_blank" rel="noopener" title="View all certifications on Credly"><img src="https://images.credly.com/size/150x150/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certification" loading="lazy"></a>
         </div>
     </div>
 </section>
@@ -71,7 +123,7 @@
                     <span class="tag">Claude Code</span>
                     <span class="tag">Web</span>
                 </div>
-                <a href="https://github.com/shresthaguy/shresthaguy.github.io" target="_blank" rel="noopener" class="project-link">View on GitHub</a>
+                <a href="https://github.com/shresthaguy/neshonshrestha.com" target="_blank" rel="noopener" class="project-link">View on GitHub</a>
             </div>
         </div>
     </div>
