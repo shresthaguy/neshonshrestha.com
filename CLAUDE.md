@@ -10,8 +10,14 @@ Personal website and knowledge base built with Hugo. Hosted on GitHub Pages with
 
 ## Commands
 - `hugo server --buildDrafts` — Local dev server at localhost:1313
-- `hugo new content kb/my-topic.md` — Create new KB article
+- `hugo new content kb/my-solution.md --kind kb-solution` — New solution article (problem → approach → verification)
+- `hugo new content kb/my-topic.md --kind kb-note` — New learning note (concept → how to use → takeaways)
+- `hugo new content kb/my-article.md` — Generic article (no template)
 - `hugo` — Build static site to ./public/
+
+## Article Types
+- **Solution** (`--kind kb-solution`): For problems you solved — workarounds, scripts, automation. Structure: The Problem → Why It's Not Straightforward → The Approach → Verification → Limitations
+- **Note** (`--kind kb-note`): For topics you learned — concepts, tools, reference material. Structure: What It Is → Key Concepts → How to Use It → Things I Learned
 
 ## Conventions
 - KB articles go in `content/kb/` with frontmatter: title, date, lastmod, description, category, tags

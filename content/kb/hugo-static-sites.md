@@ -5,40 +5,55 @@ lastmod: 2026-08-02
 description: "How this site is built. Hugo basics, project structure, and deployment to GitHub Pages."
 category: "Web Development"
 tags: ["hugo", "static-sites", "github-pages", "web"]
+type: "note"
 ---
 
-## What is Hugo?
+## What It Is
 
-A fast static site generator written in Go. You write content in Markdown, Hugo converts it to a full website. No database, no server — just HTML/CSS/JS files.
+Hugo is a fast static site generator written in Go. You write content in Markdown, Hugo converts it to a full website. No database, no server, no monthly hosting costs — just HTML/CSS/JS files served from GitHub Pages.
 
-## Why Hugo?
+## Key Concepts
 
-- Blog/KB posts are just markdown files — easy to write and version control
-- Builds in milliseconds
-- Free hosting on GitHub Pages
-- SEO-friendly out of the box (sitemaps, RSS, meta tags)
+**Content as Markdown** — Every page/article is a `.md` file with frontmatter (metadata at the top) and body content. No CMS, no editor — just files in a folder.
 
-## Project Structure
+**Archetypes** — Templates for new content. When you run `hugo new content kb/my-article.md --kind kb-solution`, it creates a file pre-filled with the solution structure.
 
+**Themes** — Layouts + styles that define how your site looks. This site uses a custom theme (`themes/neshon/`).
+
+**Taxonomies** — Tags and categories that auto-generate listing pages (e.g., `/tags/aws/` shows all articles tagged with AWS).
+
+**Project Structure:**
 ```
 my-site/
-├── content/         # Your pages and posts (markdown)
-│   └── kb/          # Knowledge base articles
-├── themes/          # Site theme (layouts + styles)
-├── static/          # Images and other static files
+├── content/kb/      # Your articles (markdown)
+├── themes/neshon/   # Site theme (layouts + styles)
+├── static/images/   # Images and static files
 ├── hugo.toml        # Site configuration
-└── .github/
-    └── workflows/   # Auto-deploy on push
+└── .github/workflows/  # Auto-deploy on push
 ```
 
-## Common Commands
+## How to Use It
 
 ```bash
-hugo server --buildDrafts    # Local dev server with live reload
-hugo new content kb/my-topic.md   # Create new article
-hugo                         # Build site to ./public/
+# Local dev server with live reload
+hugo server --buildDrafts
+
+# Create new solution article
+hugo new content kb/my-workaround.md --kind kb-solution
+
+# Create new learning note
+hugo new content kb/my-topic.md --kind kb-note
+
+# Build site to ./public/
+hugo
 ```
 
-## Deployment
+**Deployment flow:** Edit locally → `git push` → GitHub Actions builds → site updates at your domain in ~1 minute.
 
-Push to GitHub → GitHub Actions builds the site → deployed to GitHub Pages → served at your custom domain. Zero-cost hosting.
+## Things I Learned
+
+- `baseURL` in hugo.toml must match your actual domain — locally use `hugo server --baseURL http://localhost:1313/` to avoid redirects
+- `lastmod` in frontmatter is useful for knowledge base articles that get updated over time
+- GitHub Pages + GitHub Actions = free hosting with auto-deploy, no server to manage
+- DNS propagation takes time (up to an hour) — don't panic if the site doesn't show immediately after connecting a domain
+- Hugo builds in milliseconds — live reload during development is instant
